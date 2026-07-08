@@ -1,0 +1,81 @@
+=======================================================================
+            CORE RELATIONAL DATABASE REAL OPERATIONAL LOGS
+=======================================================================
+
+
+-----------------------------------------------------------------------
+PART 1: AGGREGATIONS & INTERMEDIATE METRICS
+👉 Total Revenue Per Category
+-----------------------------------------------------------------------
+   category  orders_count  total_revenue
+       Home           139      121180.96
+      Books           152      117207.50
+   Clothing           130       95345.01
+Electronics           127       93147.69
+----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+👉 Top 5 Customers by Total Order Value
+-----------------------------------------------------------------------
+customer_id     customer_name  total_order_value
+  CUST_0462        Kayla Diaz            7472.17
+  CUST_0077  Brittany Rollins            7115.06
+  CUST_0572 Jacqueline Rogers            6768.15
+  CUST_0569       Robert Ford            5978.99
+  CUST_0134        Jesse Long            5176.40
+----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+👉 Return Rate Percentage Per Category
+-----------------------------------------------------------------------
+   category  returned_items  purchased_items  return_rate_percent
+      Books              34              512                 6.64
+   Clothing              19              419                 4.53
+Electronics              24              410                 5.85
+       Home              14              476                 2.94
+----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+PART 2: ADVANCED WINDOW FUNCTIONS & CTES
+👉 DENSE_RANK() Within Product Categories
+-----------------------------------------------------------------------
+category         product_name  total_revenue  rank_in_category
+   Books       Employee Trade        5904.96                 1
+   Books           Push Large        3512.89                 2
+   Books     Believe Marriage        3260.24                 3
+   Books          Minute Wide        2905.62                 4
+   Books          Nice Decide        2619.92                 5
+   Books Continue Environment        2605.43                 6
+   Books          Result Fund        2597.31                 7
+   Books    Tonight Different        2577.36                 8
+   Books           Poor Could        2556.36                 9
+   Books            Ready Job        2521.16                10
+----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+👉 Customer LTV Quartile Segmentation (NTILE)
+-----------------------------------------------------------------------
+customer_id  total_value  quartile quartile_label
+  CUST_0462      7472.17         1       Platinum
+  CUST_0077      7115.06         1       Platinum
+  CUST_0572      6768.15         1       Platinum
+  CUST_0569      5978.99         1       Platinum
+  CUST_0001      5807.91         1       Platinum
+  CUST_0134      5176.40         1       Platinum
+  CUST_0537      5171.35         1       Platinum
+  CUST_0313      4954.80         1       Platinum
+  CUST_0270      4880.90         1       Platinum
+  CUST_0525      4710.97         1       Platinum
+----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+PART 3: COHORT RETENTION MATRIX
+👉 Simulated Monthly Cohort Summary
+-----------------------------------------------------------------------
+cohort_month  active_users  total_orders
+     2024-07            19            19
+     2024-08            27            27
+     2024-09            37            37
+     2024-10            22            22
+     2024-11            19            19
+----------------------------------------------------------------------

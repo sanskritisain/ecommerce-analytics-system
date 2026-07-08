@@ -1,0 +1,28 @@
+ecommerce-analytics-system % python3 scripts/report_cli.py --report monthly --start 2024-01-01 --end 2026-12-31
+⚠️ EDGE CASE WARNING: Provided date '2026-12-31' is in the future. Processing anyway...
+
+🕵️ Executing Core System Edge Case Audits...
+ -> Edge Case Audit 1 (Discount > 100%): Found 0 rows. ✅ PASSED
+ -> Edge Case Audit 2 (Quantity == 0): Found 0 rows. ✅ PASSED
+ -> Edge Case Audit 3 (Referential Integrity): Found 0 orphaned item records. ✅ PASSED
+
+📈 COMPILING E-COMMERCE SUMMARY REPORT [MONTHLY]
+📅 Filter Range: 2024-01-01 to 2026-12-31
+
+=======================================================
+                EXECUTIVE BUSINESS KPI REPORT             
+=======================================================
+ Total Registered Revenue : $392,484.58
+ Total Confirmed Orders   : 310
+ Total Unique Customers   : 245
+ Operational Context      : Baseline metrics unavailable for prior timeline frameworks
+=======================================================
+
+⭐ TOP 3 LEADING MERCHANDISE LINES:
++---------------+-------------------+------------------------+
+| Product Name  | Units Distributed | Net Revenue Generation |
++---------------+-------------------+------------------------+
+| Home Standard | 18                | $5,579.73              |
+| Behind May    | 14                | $4,593.07              |
+| Prove Case    | 14                | $4,617.87              |
++---------------+-------------------+------------------------+
