@@ -1,4 +1,3 @@
-cat << 'EOF' > scripts/app_web.py
 import streamlit as st
 import sqlite3
 import pandas as pd
@@ -68,4 +67,3 @@ with col_right:
     ltv_df = run_query(ltv_query)
     fig_bar = px.bar(ltv_df, x='Segment', y='Total_Customers', color='Segment', title="User Cohorts Segmented via NTILE()")
     st.plotly_chart(fig_bar, use_container_width=True)
-EOF
